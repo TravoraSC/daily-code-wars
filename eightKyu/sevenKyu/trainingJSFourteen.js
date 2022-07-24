@@ -2,8 +2,8 @@ function colorOf(r,g,b){
   r = r.toString(16).padStart(2, 0)
   g = g.toString(16).padStart(2, 0)
   b = b.toString(16).padStart(2, 0)
-  console.log(r, g, b)
-  
+//padStart - first number: how many characters long you want the string to be(including padding)
+//         - second number: what you want to pad the string with
   return '#' + r + g + b
   
 }
