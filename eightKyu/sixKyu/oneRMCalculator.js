@@ -34,3 +34,24 @@ const mcGlothin1RM = (w, r) => {
 const lombardi1RM = (w, r) => {
   return w*(r**.10)
 }
+
+class WeightLift {  
+  constructor(w, r) {
+    this.w = w
+    this.r = r
+  }
+  epley1RM() {
+   return this.w*(1 + (this.r/30))
+  }
+  mcGlothin1RM() {
+   return (100*this.w)/(101.3 - (2.67123*this.r))
+  }
+  lombardi1RM() {
+   return this.w*(this.r**.10)
+  }
+  calculate1RM(){
+   return this.r === 1 ? this.w :
+          this.r === 0 ? 0 : Math.round(Math.max(this.epley1RM(), this.mcGlothin1RM(), this.lombardi1RM()))
+ }
+}
+
