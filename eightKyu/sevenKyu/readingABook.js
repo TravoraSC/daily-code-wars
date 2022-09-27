@@ -24,10 +24,21 @@
 // sc(words2)=78 
 // CoffeeScript is one word, Coffee Script are two words
 
+
+//First Solution
 const sc = words => {
   let counter = 0
   let wordArr = []
   let stringArr = words.toLowerCase().split(' ').map(el => el.split('').filter(el => el.match(/^[A-Za-z]+$/)).join(''))
   stringArr.forEach(el => wordArr.includes(el) ? counter++ : wordArr.push(el))
   return counter += wordArr.join('').length
+}
+
+//Second Solution
+function sc(words){
+  let readCount = 0
+  const wordsSet = new Set(words.toLowerCase().split(' ').map(el => el.split('').filter(el => el.match(/^[a-z]+$/)).join('')))
+  wordsSet.forEach(el => readCount += el.length)
+  readCount += words.split(' ').length - wordsSet.size
+  return readCount
 }
