@@ -10,3 +10,10 @@ function fixTheMeerkat(arr) {
   return arr.reverse()
 }
 
+function fixTheMeerkat(arr) {
+  const firstEl = arr[0]
+  const lastEl = arr[arr.length-1]
+  arr[0] = lastEl
+  arr[arr.length-1] = firstEl
+  return arr
+}
